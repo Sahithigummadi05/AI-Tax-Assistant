@@ -13,12 +13,47 @@ IRS-compliant tax calculation system with ML-powered deduction optimization for 
 - 🔒 **Security**: AES-256 encryption for financial data
 - 📟 **CLI Interface**: User-friendly command-line workflow
 
-## Installation
 
+## How Tax is Calculated
 
-## Usage
+The system uses a progressive tax bracket system based on 2025 IRS projections. Here's a step-by-step explanation with examples:
 
+### 1. Determine Taxable Income
+Taxable Income = Gross Income - Deductions
 
+### 2. Apply Tax Brackets
+For each bracket, tax is calculated on the portion of income that falls within that bracket.
+
+#### Example 1: Single Filer
+
+Assume a single filer with $75,000 taxable income:
+
+| Bracket     | Rate | Calculation                  | Tax      |
+|-------------|------|------------------------------|----------|
+| $0-$11,600  | 10%  | 11,600 × 10%                 | $1,160   |
+| $11,601-$47,150 | 12% | (47,150 - 11,600) × 12%   | $4,266   |
+| $47,151-$75,000 | 22% | (75,000 - 47,150) × 22%   | $6,127   |
+| **Total Tax** |    |                              | **$11,553** |
+
+#### Example 2: Married Filing Jointly
+
+Assume a married couple filing jointly with $150,000 taxable income:
+
+| Bracket     | Rate | Calculation                  | Tax      |
+|-------------|------|------------------------------|----------|
+| $0-$23,200  | 10%  | 23,200 × 10%                 | $2,320   |
+| $23,201-$94,300 | 12% | (94,300 - 23,200) × 12%   | $8,532   |
+| $94,301-$150,000 | 22% | (150,000 - 94,300) × 22% | $12,254  |
+| **Total Tax** |    |                              | **$23,106** |
+
+### 3. Deduction Optimization
+The ML model predicts whether itemizing deductions would be more beneficial than taking the standard deduction. This decision is based on:
+- Mortgage interest
+- Charitable donations
+- Medical expenses (above 7.5% AGI threshold)
+
+### 4. Final Tax Calculation
+Tax Owed = Calculated Tax - Credits (if applicable)
 
 ## Project Structure
 

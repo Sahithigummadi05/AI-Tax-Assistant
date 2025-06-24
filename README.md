@@ -10,7 +10,6 @@ IRS-compliant tax calculation system with ML-powered deduction optimization for 
 - 📊 **2025 Tax Compliance**: Updated brackets/rates/deductions
 - 🤖 **ML Optimization**: Decision Tree model for deduction strategy
 - 👫 **Joint Filing**: Combined spouse income handling
-- 🔒 **Security**: AES-256 encryption for financial data
 - 📟 **CLI Interface**: User-friendly command-line workflow
 
 
